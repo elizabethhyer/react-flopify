@@ -21,8 +21,7 @@ class Api::V1::MoviesController < ApplicationController
         end 
     end
 
-    def show
-        # movie = @genre.movies.find(by(id: params[:id]))
+    def show 
         movie = Movie.find(params[:id])
         render json: movie
     end 
