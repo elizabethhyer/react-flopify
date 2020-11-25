@@ -3,9 +3,13 @@ class Api::V1::MoviesController < ApplicationController
     before_action :set_genre
 
     def index
-        #render all movies
-        #render movies associated with a genre
-        render json: @genre.movies 
+        if params[:genre_id]
+            movies = Genre.find_by(id: params[:genre_id]).movies.distinct
+            genre = Genre.find_by(id: params[:genre_id])
+        else 
+            movies = Movie.all
+        end 
+        render json: movies 
     end 
 
     def create
@@ -38,10 +42,3 @@ class Api::V1::MoviesController < ApplicationController
         params.require(:movie).permit(:title, :description, :rating, :genre_id)
     end 
 end
-
-        # if params[:genre_id]
-        #     movie = Genre.find_by(id: params[:genre_id]).movies.distinct
-        #     genre = Genre.find_by(id: params[:genre_id])
-        # else 
-        #     movies = Movies.all
-        # end
