@@ -1,15 +1,25 @@
 import "./App.css";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchGenres } from "./actions/fetchGenres";
 
-export default class App extends Component {
+class App extends Component {
   componentDidMount() {
-    // debugger
-    fetch("http://localhost:3000/api/v1/genres")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    this.props.fetchGenres({
+      type: "FETCH_GENRES",
+      payload: { name: "horror" },
+    });
   }
 
   render() {
-    return <div className="App"></div>;
+    return <div className="App">App</div>;
   }
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     genres: state.genres
+//   }
+// };
+
+export default connect(null, { fetchGenres })(App);
