@@ -13,7 +13,7 @@ class GenresContainer extends Component {
     return (
       <div>
         <GenreInput />
-        <Genres />
+        <Genres genres={this.props.genres} />
       </div>
     );
   }
