@@ -15,10 +15,4 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     genres: state.genres
-//   }
-// };
-
-export default connect()(App);
+export default App;

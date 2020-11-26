@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchGenres } from "../actions/fetchGenres";
 import Genres from "../components/Genres";
 import GenreInput from "../components/GenreInput";
 
-export default class GenresContainer extends Component {
+class GenresContainer extends Component {
+  componentDidMount() {
+    this.props.fetchGenres();
+  }
+
   render() {
     return (
       <div>
@@ -12,3 +18,11 @@ export default class GenresContainer extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    genres: state.genres,
+  };
+};
+
+export default connect(mapStateToProps, { fetchGenres })(GenresContainer);
