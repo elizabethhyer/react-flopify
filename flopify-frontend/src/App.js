@@ -1,18 +1,17 @@
 import "./App.css";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchGenres } from "./actions/fetchGenres";
+import GenresContainer from "./containers/GenresContainer";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchGenres({
-      type: "FETCH_GENRES",
-      payload: { name: "horror" },
-    });
-  }
+  componentDidMount() {}
 
   render() {
-    return <div className="App">App</div>;
+    return (
+      <div className="App">
+        <GenresContainer />
+      </div>
+    );
   }
 }
 
@@ -22,4 +21,4 @@ class App extends Component {
 //   }
 // };
 
-export default connect(null, { fetchGenres })(App);
+export default connect()(App);

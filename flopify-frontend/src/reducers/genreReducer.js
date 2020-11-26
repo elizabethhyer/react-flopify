@@ -1,3 +1,1 @@
-export default function genreReducer(state = { genres: [] }, action) {
-  return action.payload;
-}
+export default function genreReducer(state = { genres: [] }, action) {}
