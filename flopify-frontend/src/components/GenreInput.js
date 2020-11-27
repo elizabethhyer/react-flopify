@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addGenre } from "../actions/addGenre";
 
 class GenreInput extends Component {
   state = { name: "" };
@@ -9,10 +11,15 @@ class GenreInput extends Component {
     });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.addGenre;
+  };
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Add a Genre:</label>
           <br />
           <input
@@ -21,7 +28,8 @@ class GenreInput extends Component {
             name="name"
             placeholder="New Genre"
             onChange={this.handleChange}
-          />{" "}
+          />
+          <input type="submit" />
           <br /> <br />
         </form>
       </div>
@@ -29,4 +37,4 @@ class GenreInput extends Component {
   }
 }
 
-export default GenreInput;
+export default connect(null, { addGenre })(GenreInput);
