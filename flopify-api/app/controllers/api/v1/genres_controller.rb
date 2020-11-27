@@ -26,6 +26,6 @@ class Api::V1::GenresController < ApplicationController
     private
 
     def genre_params
-        params.require(:movie).permit(:name )
+        params.require(:movie).permit(:name)
     end 
 end
