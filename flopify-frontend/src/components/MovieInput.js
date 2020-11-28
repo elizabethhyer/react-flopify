@@ -8,14 +8,23 @@ class MovieInput extends Component {
     rating: "",
   };
 
-  handleChange = () => {};
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
   render() {
     return (
       <div>
         <form>
           <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} />
+          <input
+            type="text"
+            name="title"
+            value={this.state.title}
+            onChange={this.handleChange}
+          />
           <br />
           <br />
           <label>Description:</label>
@@ -23,11 +32,16 @@ class MovieInput extends Component {
             type="text"
             name="description"
             value={this.state.description}
+            onChange={this.handleChange}
           />
           <br />
           <br />
           <label>(1-10) Rating:</label>
-          <select name="rating" value={this.state.value}>
+          <select
+            name="rating"
+            value={this.state.rating}
+            onChange={this.handleChange}
+          >
             <option>1</option>
             <option>2</option>
             <option>3</option>
