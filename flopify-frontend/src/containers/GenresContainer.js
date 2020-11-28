@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Route } from "react-router-dom";
 import { fetchGenres } from "../actions/fetchGenres";
 import Genres from "../components/Genres";
 import GenreInput from "../components/GenreInput";
@@ -12,8 +13,11 @@ class GenresContainer extends Component {
   render() {
     return (
       <div>
-        <GenreInput />
-        <Genres genres={this.props.genres} />
+        <Route path="/genres/new" component={GenreInput} />
+        <Route
+          path="/genres"
+          render={() => <Genres genres={this.props.genres} />}
+        />
       </div>
     );
   }
