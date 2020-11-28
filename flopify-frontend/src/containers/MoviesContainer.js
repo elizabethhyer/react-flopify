@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import MovieInput from "../components/MovieInput";
 
 export default class MoviesContainer extends Component {
   render() {
-    return <div>A CONTAINER A CONTAINER A CONTAINER</div>;
+    return (
+      <div>
+        <MovieInput />
+      </div>
+    );
   }
 }
