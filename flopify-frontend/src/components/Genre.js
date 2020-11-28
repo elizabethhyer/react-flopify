@@ -15,7 +15,7 @@ const Genre = (props) => {
         {/* {genre ? null : <Redirect to="/genres" />} */}
         {genre ? genre.name : null}
       </h1>
-      <MoviesContainer />
+      <MoviesContainer genre={genre} />
     </div>
   );
 };
