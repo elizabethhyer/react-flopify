@@ -14,6 +14,7 @@ class GenreInput extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addGenre(this.state);
+    this.setState({ name: "" });
   };
 
   render() {
