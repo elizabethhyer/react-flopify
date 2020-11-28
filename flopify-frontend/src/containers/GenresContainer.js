@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { fetchGenres } from "../actions/fetchGenres";
 import Genres from "../components/Genres";
 import Genre from "../components/Genre";
@@ -14,20 +14,21 @@ class GenresContainer extends Component {
   render() {
     return (
       <div>
-        <Route path="/genres/new" component={GenreInput} />
-        <Route
-          path="/genres/:id"
-          render={(routerProps) => (
-            <Genre {...routerProps} genres={this.props.genres} />
-          )}
-        />
-        <Route
-          exact
-          path="/genres"
-          render={(routerProps) => (
-            <Genres {...routerProps} genres={this.props.genres} />
-          )}
-        />
+        <Switch>
+          <Route path="/genres/new" component={GenreInput} />
+          <Route
+            path="/genres/:id"
+            render={(routerProps) => (
+              <Genre {...routerProps} genres={this.props.genres} />
+            )}
+          />
+          <Route
+            path="/genres"
+            render={(routerProps) => (
+              <Genres {...routerProps} genres={this.props.genres} />
+            )}
+          />
+        </Switch>
       </div>
     );
   }
