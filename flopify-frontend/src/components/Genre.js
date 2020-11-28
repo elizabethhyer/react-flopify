@@ -5,9 +5,7 @@ import MoviesContainer from "../containers/MoviesContainer";
 const Genre = (props) => {
   console.log(props);
 
-  //This isn't finding by ID, it's finding by index. A fix?
-
-  let genre = props.genres[props.match.params.id - 1];
+  let genre = props.genres.filter((g) => g.id == props.match.params.id)[0];
 
   return (
     <div>
