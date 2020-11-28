@@ -15,7 +15,7 @@ class Api::V1::MoviesController < ApplicationController
     def create
         movie = @genre.movie.build(movie_params)
         if movie.save
-            render json: movie
+            render json: genre
         else 
             render json: {error: 'Please try again'}
         end 

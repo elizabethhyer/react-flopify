@@ -7,7 +7,7 @@ export default class MoviesContainer extends Component {
   render() {
     return (
       <div>
-        <MovieInput />
+        <MovieInput genre={this.props.genre} />
         <Movies movies={this.props.genre && this.props.genre.movies} />
       </div>
     );

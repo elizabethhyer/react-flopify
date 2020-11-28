@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addMovie } from "../actions/addMovie";
 
 class MovieInput extends Component {
   state = {
     title: "",
     description: "",
-    rating: "",
+    rating: 1,
   };
 
   handleChange = (e) => {
@@ -14,10 +15,15 @@ class MovieInput extends Component {
     });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // addMovie(this.state, this.props.id)
+  };
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Title:</label>
           <input
             type="text"
