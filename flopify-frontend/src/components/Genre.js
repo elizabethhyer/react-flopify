@@ -9,10 +9,7 @@ const Genre = (props) => {
 
   return (
     <div>
-      <h1>
-        {/* {genre ? null : <Redirect to="/genres" />} */}
-        {genre ? genre.name : null}
-      </h1>
+      <h1>{genre ? genre.name : null}</h1>
       <MoviesContainer genre={genre} />
     </div>
   );

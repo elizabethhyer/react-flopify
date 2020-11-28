@@ -75,4 +75,4 @@ class MovieInput extends Component {
   }
 }
 
-export default connect(null)(MovieInput);
+export default connect(null, { addMovie })(MovieInput);
