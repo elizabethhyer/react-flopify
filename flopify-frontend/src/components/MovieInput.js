@@ -17,7 +17,12 @@ class MovieInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // addMovie(this.state, this.props.id)
+    this.props.addMovie(this.state, this.props.genre.id);
+    this.setState({
+      title: "",
+      description: "",
+      rating: 1,
+    });
   };
 
   render() {
