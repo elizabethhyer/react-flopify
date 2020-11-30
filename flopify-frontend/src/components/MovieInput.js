@@ -23,6 +23,7 @@ class MovieInput extends Component {
       description: "",
       rating: 1,
     });
+    this.props.history.push(`/genres/${this.props.genre.id}/movies`);
   };
 
   render() {

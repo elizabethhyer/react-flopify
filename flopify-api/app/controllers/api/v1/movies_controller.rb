@@ -28,6 +28,7 @@ class Api::V1::MoviesController < ApplicationController
             render json: movie
         else 
             render json: {error: 'Please try again'}
+        end 
     end 
 
     def show 

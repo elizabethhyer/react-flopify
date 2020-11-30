@@ -12,6 +12,7 @@ const Movie = (props) => {
 
   const handleDelete = (movie) => {
     props.deleteMovie(movie.id, movie.genre_id);
+    props.history.push('/genres');
   };
 
   return (

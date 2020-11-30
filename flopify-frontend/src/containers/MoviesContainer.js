@@ -10,7 +10,12 @@ export default class MoviesContainer extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/genres/:id/movies/new" component={MovieInput} />
+          <Route
+            path="/genres/:id/movies/new"
+            render={(routerProps) => (
+              <MovieInput {...routerProps} genre={this.props.genre} />
+            )}
+          />
           <Route
             path="/genres/:genreId/movies/:movieId"
             render={(routerProps) => (

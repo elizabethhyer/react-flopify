@@ -22,9 +22,6 @@ ReactDOM.render(
     <Router>
       <div>
         <Navbar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/genres/new" component={GenreInput} />
-        <Route exact path="/genres" component={Genres} />
         <App />
       </div>
     </Router>

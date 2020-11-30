@@ -20,7 +20,7 @@ const Genre = (props) => {
     <div>
       <h1>{genreDisplay()}</h1>
       <h2>
-        <Link to={`/genres/{genre.id}/movies/new`}>Add a New Movie!</Link>
+        <Link to={`/genres/${genre.id}/movies/new`}>Add a New Movie!</Link>
       </h2>
       <MoviesContainer genre={genre} />
     </div>
