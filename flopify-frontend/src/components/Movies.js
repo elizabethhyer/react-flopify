@@ -5,7 +5,6 @@ import { deleteMovie } from "../actions/deleteMovie";
 
 const Movies = (props) => {
   const handleDelete = (movie) => {
-    debugger;
     props.deleteMovie(movie.id, movie.genre_id);
   };
 
@@ -17,7 +16,6 @@ const Movies = (props) => {
             <Link to={`/genres/${m.genre_id}/movies/${m.id}`}>
               Title: {m.title}
             </Link>
-            {/* Title: {m.title} <br /> */}
             <button onClick={() => handleDelete(m)}>Delete</button> <br />
             Rating: {m.rating} / 10 <br />
           </li>
