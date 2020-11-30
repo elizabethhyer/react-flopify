@@ -23,6 +23,7 @@ const Movie = (props) => {
       <p>{movie ? movie.description : null}</p>
       <br />
       <button onClick={() => handleDelete(movie)}>Delete</button> <br />
+      <MovieEdit movie={movie} />
     </div>
   );
 };

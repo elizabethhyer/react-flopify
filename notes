@@ -1,4 +1,4 @@
-set up nav bar
+navbar not working
 
 link to edit on movies page
 only show genre on genre show page
@@ -8,4 +8,5 @@ after delete, it does not redirect to index, and if you try to delete again ther
 adding movie no longer works
 
 genres no longer displaying at all
-where would nav bar go?
+
+edit not working

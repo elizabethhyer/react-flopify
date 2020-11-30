@@ -21,6 +21,15 @@ class Api::V1::MoviesController < ApplicationController
         end 
     end
 
+    def update 
+        movie = Movie.find(params[:id])
+        movie.update(movie_params)
+        if movie.save
+            render json: movie
+        else 
+            render json: {error: 'Please try again'}
+    end 
+
     def show 
         movie = Movie.find(params[:id])
         render json: movie
