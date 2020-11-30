@@ -2,3 +2,5 @@ set up nav bar
 
 link to edit on movies page
 only show genre on genre show page
+
+after delete, it does not redirect to index, and if you try to delete again there's an error

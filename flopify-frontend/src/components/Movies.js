@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { deleteMovie } from "../actions/deleteMovie";
 
 const Movies = (props) => {
-  const handleDelete = (movie) => {
-    props.deleteMovie(movie.id, movie.genre_id);
-  };
-
   return (
     <div>
       {props.movies &&
@@ -16,7 +10,7 @@ const Movies = (props) => {
             <Link to={`/genres/${m.genre_id}/movies/${m.id}`}>
               Title: {m.title}
             </Link>
-            <button onClick={() => handleDelete(m)}>Delete</button> <br />
+            <br />
             Rating: {m.rating} / 10 <br />
           </li>
         ))}
@@ -24,4 +18,4 @@ const Movies = (props) => {
   );
 };
 
-export default connect(null, { deleteMovie })(Movies);
+export default Movies;
