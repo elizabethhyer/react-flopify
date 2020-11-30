@@ -28,7 +28,9 @@ class Api::V1::MoviesController < ApplicationController
 
     def destroy
         movie = Movie.find(params[:id])
+        genre = Genre.find(movie.genre_id)
         movie.destroy
+        render json: genre
     end 
 
     private
