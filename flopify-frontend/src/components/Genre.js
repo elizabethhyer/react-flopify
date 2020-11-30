@@ -7,9 +7,13 @@ const Genre = (props) => {
 
   let genre = props.genres.filter((g) => g.id == props.match.params.id)[0];
 
+  genreDisplay = () => {
+    genre ? genre.name : null;
+  };
+
   return (
     <div>
-      <h1>{genre ? genre.name : null}</h1>
+      <h1>{genreDisplay()}</h1>
       <MoviesContainer genre={genre} />
     </div>
   );
