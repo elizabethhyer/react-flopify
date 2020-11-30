@@ -7,8 +7,8 @@ export const deleteMovie = (movieId, genreId) => {
       }
     )
       .then((response) => response.json())
-      .then((movie) => {
-        dispatch({ type: "DELETE_MOVIE", payload: movie });
+      .then((genre) => {
+        dispatch({ type: "DELETE_MOVIE", payload: genre });
       });
   };
 };
