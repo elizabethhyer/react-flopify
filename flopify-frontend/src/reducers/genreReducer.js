@@ -26,6 +26,16 @@ export default function genreReducer(state = { genres: [] }, action) {
       });
       return { ...state, genres: genres2 };
 
+    case "EDIT_MOVIE":
+      let genres3 = state.genres.map((g) => {
+        if (g.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return g;
+        }
+      });
+      return { ...state, genres: genres3 };
+
     default:
       return state;
   }
