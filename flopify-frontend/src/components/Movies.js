@@ -5,21 +5,23 @@ import { deleteMovie } from "../actions/deleteMovie";
 
 const Movies = (props) => {
   const handleDelete = (movie) => {
-    props.deleteMovie(movie.id, movie.genre.id);
+    debugger;
+    props.deleteMovie(movie.id, movie.genre_id);
   };
 
   return (
     <div>
-      {/* {props.movies &&
+      {props.movies &&
         props.movies.map((m) => (
           <li key={m.id}>
-            <Link to={`/genres/${m.genre.id}/movies/${m.id}`}>
+            <Link to={`/genres/${m.genre_id}/movies/${m.id}`}>
               Title: {m.title}
             </Link>
+            {/* Title: {m.title} <br /> */}
             <button onClick={() => handleDelete(m)}>Delete</button> <br />
             Rating: {m.rating} / 10 <br />
           </li>
-        ))} */}
+        ))}
     </div>
   );
 };

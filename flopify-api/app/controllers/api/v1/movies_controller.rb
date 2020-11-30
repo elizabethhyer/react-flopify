@@ -3,6 +3,7 @@ class Api::V1::MoviesController < ApplicationController
     before_action :set_genre
 
     def index
+        byebug
         if params[:genre_id]
             movies = Genre.find_by(id: params[:genre_id]).movies.distinct
             genre = Genre.find_by(id: params[:genre_id])
