@@ -7,8 +7,8 @@ const Genre = (props) => {
 
   let genre = props.genres.filter((g) => g.id == props.match.params.id)[0];
 
-  genreDisplay = () => {
-    genre ? genre.name : null;
+  const genreDisplay = () => {
+    return genre ? genre.name : null;
   };
 
   return (
