@@ -16,11 +16,15 @@ const Genre = (props) => {
     }
   };
 
+  console.log(props.match);
   return (
     <div>
+      {/* <h1>{genre ? genre.name : null}</h1> */}
       <h1>{genreDisplay()}</h1>
       <h2>
-        <Link to={`/genres/${genre.id}/movies/new`}>Add a New Movie!</Link>
+        <Link to={genre && `/genres/${genre.id}/movies/new`}>
+          Add a New Movie!
+        </Link>
       </h2>
       <MoviesContainer genre={genre} />
     </div>

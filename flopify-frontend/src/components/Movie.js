@@ -12,8 +12,10 @@ const Movie = (props) => {
 
   const handleDelete = (movie) => {
     props.deleteMovie(movie.id, movie.genre_id);
-    props.history.push('/genres');
+    props.history.push("/genres");
   };
+
+  console.log(props.match);
 
   return (
     <div>
@@ -23,8 +25,11 @@ const Movie = (props) => {
       <br />
       <p>{movie ? movie.description : null}</p>
       <br />
+      <Link to={movie && `/genres/${movie.genre_id}/movies//${movie.id}/edit`}>
+        Edit Movie
+      </Link>
+      <br /> <br />
       <button onClick={() => handleDelete(movie)}>Delete</button> <br />
-      <MovieEdit movie={movie} />
     </div>
   );
 };

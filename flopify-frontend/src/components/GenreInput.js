@@ -15,6 +15,7 @@ class GenreInput extends Component {
     e.preventDefault();
     this.props.addGenre(this.state);
     this.setState({ name: "" });
+    this.props.history.push(`/genres`);
   };
 
   render() {

@@ -4,6 +4,7 @@ import Genre from "../components/Genre";
 import MovieInput from "../components/MovieInput";
 import Movies from "../components/Movies";
 import Movie from "../components/Movie";
+import MovieEdit from "../components/MovieEdit";
 
 export default class MoviesContainer extends Component {
   render() {
@@ -20,6 +21,15 @@ export default class MoviesContainer extends Component {
             path="/genres/:genreId/movies/:movieId"
             render={(routerProps) => (
               <Movie
+                {...routerProps}
+                movies={this.props.genre && this.props.genre.movies}
+              />
+            )}
+          />
+          <Route
+            path="/genres/:genreId/movies/:movieId/edit"
+            render={(routerProps) => (
+              <MovieEdit
                 {...routerProps}
                 movies={this.props.genre && this.props.genre.movies}
               />

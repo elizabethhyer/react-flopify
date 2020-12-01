@@ -1,7 +1,7 @@
-export const editMovie = (movieId, genreId) => {
+export const editMovie = (movie) => {
   return (dispatch) => {
     return fetch(
-      `http://localhost:3000/api/v1/genres/${genreId}/movies/${movieId}`,
+      `http://localhost:3000/api/v1/genres/${movie.genre_id}/movies/${movie.id}`,
       {
         headers: {
           "Content-Type": "application/json",

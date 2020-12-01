@@ -15,7 +15,12 @@ class GenresContainer extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/genres/new" component={GenreInput} />
+          <Route
+            path="/genres/new"
+            render={(routerProps) => (
+              <GenreInput {...routerProps} genre={this.props.genre} />
+            )}
+          />
           <Route
             path="/genres/:id"
             render={(routerProps) => (

@@ -7,11 +7,10 @@ const Movies = (props) => {
       {props.movies &&
         props.movies.map((m) => (
           <li key={m.id}>
-            <Link to={`/genres/${m.genre_id}/movies/${m.id}`}>
-              Title: {m.title}
-            </Link>
+            <Link to={`/genres/${m.genre_id}/movies/${m.id}`}>{m.title}</Link>
             <br />
             Rating: {m.rating} / 10 <br />
+            <br />
           </li>
         ))}
     </div>
