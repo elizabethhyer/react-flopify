@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import Genre from "../components/Genre";
+import Genre from "../components/Genre"; // Do I not need this? For passing props?
 import MovieInput from "../components/MovieInput";
 import Movies from "../components/Movies";
 import Movie from "../components/Movie";
-import MovieEdit from "../components/MovieEdit";
 
 export default class MoviesContainer extends Component {
   render() {
@@ -18,6 +17,7 @@ export default class MoviesContainer extends Component {
             )}
           />
           <Route
+            exact
             path="/genres/:genreId/movies/:movieId"
             render={(routerProps) => (
               <Movie
@@ -29,12 +29,21 @@ export default class MoviesContainer extends Component {
           <Route
             path="/genres/:genreId/movies/:movieId/edit"
             render={(routerProps) => (
-              <MovieEdit
+              <MovieInput
                 {...routerProps}
                 movies={this.props.genre && this.props.genre.movies}
               />
             )}
           />
+          {/* <Route
+            path="/genres/:genreId/movies/:movieId/edit"
+            render={(routerProps) => (
+              <MovieEdit
+                {...routerProps}
+                movies={this.props.genre && this.props.genre.movies}
+              />
+            )}
+          /> */}
           <Movies movies={this.props.genre && this.props.genre.movies} />
         </Switch>
       </div>

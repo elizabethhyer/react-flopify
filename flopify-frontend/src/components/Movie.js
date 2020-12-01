@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteMovie } from "../actions/deleteMovie";
 import { Route, Link } from "react-router-dom";
-import MovieEdit from "./MovieEdit";
 
 const Movie = (props) => {
   let movie =
@@ -25,7 +24,7 @@ const Movie = (props) => {
       <br />
       <p>{movie ? movie.description : null}</p>
       <br />
-      <Link to={movie && `/genres/${movie.genre_id}/movies//${movie.id}/edit`}>
+      <Link to={movie && `/genres/${movie.genre_id}/movies/${movie.id}/edit`}>
         Edit Movie
       </Link>
       <br /> <br />
