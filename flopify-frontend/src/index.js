@@ -22,6 +22,7 @@ ReactDOM.render(
     <Router>
       <div>
         <Navbar />
+        <Route exact path="/" component={Home} />
         <App />
       </div>
     </Router>
