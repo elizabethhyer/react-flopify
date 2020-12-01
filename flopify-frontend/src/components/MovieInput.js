@@ -8,9 +8,11 @@ class MovieInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.genre ? this.props.genre.movie.title : "",
-      description: this.props.genre ? this.props.genre.movie.description : "",
-      rating: this.props.genre ? this.props.genre.movie.rating : "",
+      title: this.props.movie ? this.props.movie.title : "",
+      description: this.props.movie ? this.props.movie.description : "",
+      rating: this.props.movie ? this.props.movie.rating : 1,
+      genre_id: this.props.movie ? this.props.movie.genre_id : "",
+      id: this.props.movie ? this.props.movie.id : "",
     };
   }
 
@@ -28,13 +30,13 @@ class MovieInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (!this.props.genre.movie) {
+    if (!this.props.movie) {
       this.props.addMovie(this.state, this.props.genre.id);
       this.props.history.push(`/genres/${this.props.genre.id}/movies`);
     } else {
       this.props.editMovie(this.state);
       this.props.history.push(
-        `/genres/${this.props.genre.id}/movies/${this.props.genre.movie.id}`
+        `/genres/${this.props.movie.genre_id}/movies/${this.props.movie.id}`
       );
     }
     this.setState({

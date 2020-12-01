@@ -31,7 +31,12 @@ export default class MoviesContainer extends Component {
             render={(routerProps) => (
               <MovieInput
                 {...routerProps}
-                movies={this.props.genre && this.props.genre.movies}
+                movie={
+                  this.props.genre &&
+                  this.props.genre.movies.filter(
+                    (m) => m.id == routerProps.match.params.movieId
+                  )[0]
+                }
               />
             )}
           />

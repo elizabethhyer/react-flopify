@@ -27,14 +27,25 @@ export default function genreReducer(state = { genres: [] }, action) {
       return { ...state, genres: genres2 };
 
     case "EDIT_MOVIE":
-      let genres3 = state.genres.map((g) => {
-        if (g.id === action.payload.id) {
+      let findGenre = state.genres.find(
+        (g) => g.id === action.payload.genre_id
+      );
+      let movies = findGenre.movies.map((m) => {
+        if (m.id === action.payload.id) {
           return action.payload;
+        } else {
+          return m;
+        }
+      });
+      findGenre.movies = movies;
+      let newGenreArr = state.genres.map((g) => {
+        if (g.id === findGenre.id) {
+          return findGenre;
         } else {
           return g;
         }
       });
-      return { ...state, genres: genres3 };
+      return { ...state, genres: newGenreArr };
 
     default:
       return state;
