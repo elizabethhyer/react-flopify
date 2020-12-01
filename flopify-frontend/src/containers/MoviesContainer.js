@@ -40,15 +40,6 @@ export default class MoviesContainer extends Component {
               />
             )}
           />
-          {/* <Route
-            path="/genres/:genreId/movies/:movieId/edit"
-            render={(routerProps) => (
-              <MovieEdit
-                {...routerProps}
-                movies={this.props.genre && this.props.genre.movies}
-              />
-            )}
-          /> */}
           <Movies movies={this.props.genre && this.props.genre.movies} />
         </Switch>
       </div>

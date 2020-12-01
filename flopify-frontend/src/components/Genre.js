@@ -9,23 +9,30 @@ const Genre = (props) => {
   let genre = props.genres.filter((g) => g.id == props.match.params.id)[0];
 
   const genreDisplay = () => {
-    if (props.match.params.id) {
+    if (window.location.pathname.includes("/movies")) {
       return null;
     } else {
       return genre ? genre.name : null;
     }
   };
 
-  console.log(props.match);
-  return (
-    <div>
-      {/* <h1>{genre ? genre.name : null}</h1> */}
-      <h1>{genreDisplay()}</h1>
-      <h2>
+  const linkDisplay = () => {
+    if (window.location.pathname.includes("/movies")) {
+      return null;
+    } else {
+      return (
         <Link to={genre && `/genres/${genre.id}/movies/new`}>
           Add a New Movie!
         </Link>
-      </h2>
+      );
+    }
+  };
+
+  console.log(props.match);
+  return (
+    <div>
+      <h1>{genreDisplay()}</h1>
+      <h2>{linkDisplay()}</h2>
       <MoviesContainer genre={genre} />
     </div>
   );
