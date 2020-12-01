@@ -6,12 +6,12 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
-import GenreInput from "./components/GenreInput";
-import Genres from "./components/Genres";
+// import GenreInput from "./components/GenreInput";
+// import Genres from "./components/Genres";
 import Navbar from "./navigation/Navbar";
 import genreReducer from "./reducers/genreReducer";
 import App from "./App";
-import MovieInput from "./components/MovieInput";
+// import MovieInput from "./components/MovieInput";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

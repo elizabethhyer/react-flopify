@@ -54,7 +54,8 @@ class MovieInput extends Component {
           <br />
           <br />
           <label>Description:</label>
-          <input
+          <br />
+          <textarea
             type="text"
             name="description"
             value={this.state.description}

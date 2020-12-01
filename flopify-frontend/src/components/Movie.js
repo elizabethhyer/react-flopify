@@ -14,8 +14,6 @@ const Movie = (props) => {
     props.history.push("/genres");
   };
 
-  console.log(props.match);
-
   return (
     <div>
       <h1>{movie ? movie.title : null}</h1>
