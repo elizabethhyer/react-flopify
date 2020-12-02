@@ -1,6 +1,6 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import { Route, Link } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MoviesContainer from "../containers/MoviesContainer";
 
 const Genre = (props) => {
@@ -17,7 +17,7 @@ const Genre = (props) => {
   };
 
   const linkDisplay = () => {
-    if (window.location.pathname.includes("/movies")) {
+    if (window.location.pathname.includes(`/movies/`)) {
       return null;
     } else {
       return (
