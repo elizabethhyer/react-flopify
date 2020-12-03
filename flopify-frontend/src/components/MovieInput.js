@@ -7,13 +7,31 @@ import { editMovie } from "../actions/editMovie";
 class MovieInput extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
-      title: this.props.movie ? this.props.movie.title : "",
-      description: this.props.movie ? this.props.movie.description : "",
-      rating: this.props.movie ? this.props.movie.rating : 1,
-      genre_id: this.props.movie ? this.props.movie.genre_id : "",
-      id: this.props.movie ? this.props.movie.id : "",
+      //   title: this.props.movie ? this.props.movie.title : "",
+      //   description: this.props.movie ? this.props.movie.description : "",
+      //   rating: this.props.movie ? this.props.movie.rating : 1,
+      //   genre_id: this.props.movie ? this.props.movie.genre_id : "",
+      //   id: this.props.movie ? this.props.movie.id : "",
+      title: "",
+      description: "",
+      rating: 1,
+      genre_id: "",
+      id: "",
     };
+  }
+
+  componentDidUpdate(props) {
+    if (props !== this.props) {
+      this.setState({ ...this.props.movie });
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.movie) {
+      this.setState({ ...this.props.movie });
+    }
   }
 
   handleChange = (e) => {
@@ -26,7 +44,7 @@ class MovieInput extends Component {
     e.preventDefault();
     if (!this.props.movie) {
       this.props.addMovie(this.state, this.props.genre.id);
-      this.props.history.push(`/genres/${this.props.genre.id}/movies`);
+      this.props.history.push(`/genres/${this.props.genre.id}`);
     } else {
       this.props.editMovie(this.state);
       this.props.history.push(

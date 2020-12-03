@@ -11,6 +11,8 @@ class GenresContainer extends Component {
     this.props.fetchGenres();
   }
 
+  componentDidUpdate() {}
+
   render() {
     return (
       <div>
