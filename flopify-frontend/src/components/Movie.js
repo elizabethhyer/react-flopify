@@ -31,4 +31,11 @@ const Movie = (props) => {
     </div>
   );
 };
-export default connect(null, { deleteMovie })(Movie);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteMovie: (movieId, genreId) => dispatch(deleteMovie(movieId, genreId)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Movie);
