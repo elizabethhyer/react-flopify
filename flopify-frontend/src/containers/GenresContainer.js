@@ -8,10 +8,10 @@ import GenreInput from "../components/GenreInput";
 
 class GenresContainer extends Component {
   componentDidMount() {
-    this.props.fetchGenres();
+    this.props.fetchGenresWithDispatch();
   }
 
-  componentDidUpdate() {}
+  // componentDidUpdate() {}
 
   render() {
     return (
@@ -41,10 +41,16 @@ class GenresContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (globalState) => {
   return {
-    genres: state.genres,
+    genres: globalState.genres,
   };
 };
 
-export default connect(mapStateToProps, { fetchGenres })(GenresContainer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchGenresWithDispatch: () => dispatch(fetchGenres()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GenresContainer);

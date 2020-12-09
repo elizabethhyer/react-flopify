@@ -113,4 +113,10 @@ class MovieInput extends Component {
   }
 }
 
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addMovieWithDispatch: () =>
+//   }
+// };
+
 export default withRouter(connect(null, { addMovie, editMovie })(MovieInput));

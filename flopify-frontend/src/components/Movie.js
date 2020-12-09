@@ -1,8 +1,8 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteMovie } from "../actions/deleteMovie";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Movie = (props) => {
   let movie =
@@ -11,6 +11,7 @@ const Movie = (props) => {
 
   const handleDelete = (movie) => {
     props.deleteMovie(movie.id, movie.genre_id);
+    console.log("what do i put in delete");
     props.history.push("/genres");
   };
 

@@ -39,4 +39,10 @@ class GenreInput extends Component {
   }
 }
 
-export default connect(null, { addGenre })(GenreInput);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addGenre: (data) => dispatch(addGenre(data)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(GenreInput);
