@@ -1,19 +1,13 @@
 import React, { Component } from "react";
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addMovie } from "../actions/addMovie";
 import { editMovie } from "../actions/editMovie";
 
 class MovieInput extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
+  constructor() {
+    super();
     this.state = {
-      //   title: this.props.movie ? this.props.movie.title : "",
-      //   description: this.props.movie ? this.props.movie.description : "",
-      //   rating: this.props.movie ? this.props.movie.rating : 1,
-      //   genre_id: this.props.movie ? this.props.movie.genre_id : "",
-      //   id: this.props.movie ? this.props.movie.id : "",
       title: "",
       description: "",
       rating: 1,
@@ -24,7 +18,7 @@ class MovieInput extends Component {
 
   componentDidUpdate(props) {
     if (props !== this.props) {
-      this.setState({ ...this.props.movie });
+      this.setState({ ...this.props.movie }); //Destructuring instead of using movie: this.props.movie
     }
   }
 

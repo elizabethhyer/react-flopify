@@ -11,17 +11,13 @@ class GenresContainer extends Component {
     this.props.fetchGenresWithDispatch();
   }
 
-  // componentDidUpdate() {}
-
   render() {
     return (
       <div>
         <Switch>
           <Route
             path="/genres/new"
-            render={(routerProps) => (
-              <GenreInput {...routerProps} genre={this.props.genre} />
-            )}
+            render={(routerProps) => <GenreInput {...routerProps} />}
           />
           <Route
             path="/genres/:id"

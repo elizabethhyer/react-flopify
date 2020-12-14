@@ -1,11 +1,8 @@
 import React from "react";
-// import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import MoviesContainer from "../containers/MoviesContainer";
 
 const Genre = (props) => {
-  console.log(props);
-
   let genre = props.genres.filter((g) => g.id == props.match.params.id)[0];
 
   const genreDisplay = () => {
@@ -28,7 +25,6 @@ const Genre = (props) => {
     }
   };
 
-  console.log(props.match);
   return (
     <div>
       <h1>{genreDisplay()}</h1>

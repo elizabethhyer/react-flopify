@@ -1,8 +1,8 @@
 import React from "react";
-// import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteMovie } from "../actions/deleteMovie";
 import { Link } from "react-router-dom";
+import { render } from "react-dom";
 
 const Movie = (props) => {
   let movie =
