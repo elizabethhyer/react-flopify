@@ -22,6 +22,10 @@ export default class Navbar extends Component {
         <NavLink to="/genres/new" exact style={link}>
           Add a Genre
         </NavLink>
+        <br />
+        <a href="https://github.com/elizabethhyer/react-flopify">
+          View on GitHub
+        </a>
       </div>
     );
   }

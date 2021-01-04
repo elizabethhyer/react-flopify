@@ -8,7 +8,9 @@ import GenreInput from "../components/GenreInput";
 
 class GenresContainer extends Component {
   componentDidMount() {
+    console.log('a')
     this.props.fetchGenresWithDispatch();
+    console.log('b')
   }
 
   render() {
